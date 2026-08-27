@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نموذج تأكيد الحساسيات الغذائية</title>
+<title>الجولة الثانية والأخيرة — تأكيد الحساسيات</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,155 +22,47 @@
   --mustard-bg:#FBEFDA;
 }
 *{box-sizing:border-box;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'Tajawal',sans-serif;
-  line-height:1.7;
-  padding:0 0 80px;
-}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Tajawal',sans-serif;line-height:1.7;padding:0 0 80px;}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
-
-.hero{
-  border-bottom:3px solid var(--ink);
-  padding:36px 0 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:16px;
-}
-.hero h1{
-  font-family:'Cairo',sans-serif;
-  font-weight:800;
-  font-size:26px;
-  margin:0 0 6px;
-}
-.hero p{margin:0;color:var(--ink-soft);font-size:14px;max-width:440px;}
-.stamp{
-  flex-shrink:0;
-  width:88px;height:88px;
-  border-radius:50%;
-  border:3px solid var(--line);
-  color:var(--ink-soft);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-family:'Cairo',sans-serif;font-weight:700;font-size:12px;text-align:center;
-  transform:rotate(-8deg);
-  transition:all .35s ease;
-  background:var(--paper-card);
-}
+.hero{border-bottom:3px solid var(--ink);padding:36px 0 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.hero h1{font-family:'Cairo',sans-serif;font-weight:800;font-size:24px;margin:0 0 6px;}
+.hero p{margin:0;color:var(--ink-soft);font-size:14px;max-width:460px;}
+.badge{font-family:'Cairo',sans-serif;font-weight:700;font-size:11px;background:var(--stamp-bg);color:var(--stamp);padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:10px;}
+.stamp{flex-shrink:0;width:88px;height:88px;border-radius:50%;border:3px solid var(--line);color:var(--ink-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cairo',sans-serif;font-weight:700;font-size:12px;text-align:center;transform:rotate(-8deg);transition:all .35s ease;background:var(--paper-card);}
 .stamp .n{font-size:20px;font-weight:800;line-height:1;margin-bottom:2px;}
-.stamp.done{
-  border-color:var(--confirm);
-  color:var(--confirm);
-  background:var(--confirm-bg);
-  transform:rotate(-8deg) scale(1.05);
-}
-
-.meta{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px;
-  margin:24px 0 8px;
-}
-.meta label{display:block;font-size:12px;color:var(--ink-soft);margin-bottom:5px;}
-.meta input{
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:6px;
-  padding:10px 12px;
-  font-family:'Tajawal',sans-serif;
-  font-size:14px;
-  background:var(--paper-card);
-  color:var(--ink);
-}
-.meta input:focus{outline:2px solid var(--mustard);outline-offset:1px;}
-
-.progress-bar{
-  height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:22px 0 6px;
-}
+.stamp.done{border-color:var(--confirm);color:var(--confirm);background:var(--confirm-bg);transform:rotate(-8deg) scale(1.05);}
+.progress-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:22px 0 6px;}
 .progress-fill{height:100%;background:var(--mustard);width:0%;transition:width .3s ease;}
-.progress-label{font-size:12px;color:var(--ink-soft);margin-bottom:18px;}
-
+.progress-label{font-size:12px;color:var(--ink-soft);margin-bottom:6px;}
 section.block{margin-top:34px;}
-.block-head{
-  display:flex;align-items:baseline;gap:10px;
-  border-bottom:2px solid var(--ink);
-  padding-bottom:8px;margin-bottom:16px;
-}
-.block-head .tag{
-  font-family:'Cairo',sans-serif;font-weight:700;font-size:11px;
-  background:var(--mustard-bg);color:var(--mustard);
-  padding:3px 10px;border-radius:20px;letter-spacing:.3px;
-}
+.block-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:16px;}
+.block-head .tag{font-family:'Cairo',sans-serif;font-weight:700;font-size:11px;background:var(--mustard-bg);color:var(--mustard);padding:3px 10px;border-radius:20px;letter-spacing:.3px;}
 .block-head h2{font-family:'Cairo',sans-serif;font-weight:700;font-size:17px;margin:0;}
 .block-note{font-size:13px;color:var(--ink-soft);margin:-8px 0 16px;}
-
-.card{
-  background:var(--paper-card);
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:16px 18px;
-  margin-bottom:12px;
-}
+.card{background:var(--paper-card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px;}
+.card.key{border:2px solid var(--stamp);}
 .card .dish{font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;margin-bottom:4px;}
 .card .q{font-size:14px;color:var(--ink-soft);margin-bottom:12px;}
+.card .why{font-size:12px;color:var(--stamp);margin:-8px 0 12px;}
 .answered .dish{color:var(--confirm);}
-
 .seg{display:flex;gap:8px;flex-wrap:wrap;}
-.seg button{
-  font-family:'Tajawal',sans-serif;
-  font-weight:500;
-  font-size:13px;
-  padding:8px 16px;
-  border-radius:20px;
-  border:1px solid var(--line);
-  background:var(--paper-card);
-  color:var(--ink);
-  cursor:pointer;
-  transition:all .15s ease;
-}
+.seg button{font-family:'Tajawal',sans-serif;font-weight:500;font-size:13px;padding:8px 16px;border-radius:20px;border:1px solid var(--line);background:var(--paper-card);color:var(--ink);cursor:pointer;transition:all .15s ease;}
 .seg button:hover{border-color:var(--ink-soft);}
 .seg button.active{background:var(--ink);border-color:var(--ink);color:var(--paper);}
-.seg button.active[data-v="لا"]{background:var(--stamp);border-color:var(--stamp);}
-.seg button.active[data-v="نعم"]{background:var(--confirm);border-color:var(--confirm);}
+.seg button.active[data-v="لا"]{background:var(--confirm);border-color:var(--confirm);}
+.seg button.active[data-v="نعم"]{background:var(--stamp);border-color:var(--stamp);}
 .seg button.active[data-v="مو متأكد"]{background:var(--mustard);border-color:var(--mustard);}
-
-textarea.freeText{
-  width:100%;min-height:56px;
-  border:1px solid var(--line);border-radius:6px;
-  padding:10px 12px;font-family:'Tajawal',sans-serif;font-size:13px;
-  resize:vertical;color:var(--ink);background:var(--paper);
-}
+textarea.freeText{width:100%;min-height:56px;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-family:'Tajawal',sans-serif;font-size:13px;resize:vertical;color:var(--ink);background:var(--paper);}
 textarea.freeText:focus{outline:2px solid var(--mustard);outline-offset:1px;}
-
-.summary-box{
-  margin-top:44px;
-  border:2px solid var(--ink);
-  border-radius:12px;
-  padding:20px;
-  background:var(--paper-card);
-}
+.summary-box{margin-top:44px;border:2px solid var(--ink);border-radius:12px;padding:20px;background:var(--paper-card);}
 .summary-box h2{font-family:'Cairo',sans-serif;font-size:17px;margin:0 0 4px;}
 .summary-box .hint{font-size:13px;color:var(--ink-soft);margin:0 0 14px;}
-#summaryOut{
-  width:100%;min-height:220px;
-  border:1px solid var(--line);border-radius:8px;
-  padding:14px;font-family:'Tajawal',sans-serif;font-size:13px;
-  background:var(--paper);color:var(--ink);white-space:pre-wrap;
-  resize:vertical;
-}
+#summaryOut{width:100%;min-height:220px;border:1px solid var(--line);border-radius:8px;padding:14px;font-family:'Tajawal',sans-serif;font-size:13px;background:var(--paper);color:var(--ink);white-space:pre-wrap;resize:vertical;}
 .copyRow{display:flex;align-items:center;gap:12px;margin-top:14px;}
-#copyBtn{
-  font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;
-  background:var(--ink);color:var(--paper);
-  border:none;border-radius:8px;padding:12px 26px;
-  cursor:pointer;transition:transform .12s ease;
-}
+#copyBtn{font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;background:var(--ink);color:var(--paper);border:none;border-radius:8px;padding:12px 26px;cursor:pointer;transition:transform .12s ease;}
 #copyBtn:active{transform:scale(.97);}
 #copyMsg{font-size:13px;color:var(--confirm);font-weight:500;opacity:0;transition:opacity .2s ease;}
 #copyMsg.show{opacity:1;}
-
 .footnote{margin-top:40px;font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;}
 </style>
 </head>
@@ -179,25 +71,11 @@ textarea.freeText:focus{outline:2px solid var(--mustard);outline-offset:1px;}
 
   <div class="hero">
     <div>
-      <h1>نموذج تأكيد الحساسيات الغذائية</h1>
-      <p>عبّي الأجوبة تحت كل صنف. الأسئلة كلها نعم / لا / مو متأكد، وبنص الآخر بوكس فيه كل الأجوبة جاهز للنسخ والإرسال.</p>
+      <span class="badge">الجولة ٢ — الأخيرة</span>
+      <h1>تأكيد النقاط المتبقية فقط</h1>
+      <p>هاي بقايا ١٢ نقطة بس (تناقض واحد + أصناف اتنسيت + أسئلة ما انسألت). بعد هاد الملف بيصير الجدول معتمد ١٠٠٪.</p>
     </div>
     <div class="stamp" id="stamp"><span class="n" id="stampPct">0%</span><span id="stampLabel">قيد التعبئة</span></div>
-  </div>
-
-  <div class="meta">
-    <div>
-      <label>اسم المطعم</label>
-      <input type="text" id="mRest" placeholder="اسم المطعم">
-    </div>
-    <div>
-      <label>اسم المسؤول / الشيف</label>
-      <input type="text" id="mChef" placeholder="الاسم">
-    </div>
-    <div>
-      <label>التاريخ</label>
-      <input type="date" id="mDate">
-    </div>
   </div>
 
   <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
@@ -207,7 +85,7 @@ textarea.freeText:focus{outline:2px solid var(--mustard);outline-offset:1px;}
 
   <div class="summary-box">
     <h2>ملخص الأجوبة</h2>
-    <p class="hint">بيتحدّث تلقائياً كل ما تجاوب على سؤال. اضغط "نسخ الكل" وألصقه بالإيميل أو الواتساب.</p>
+    <p class="hint">بيتحدّث تلقائياً. اضغط "نسخ الكل" وابعتلي ياه مباشرة.</p>
     <textarea id="summaryOut" readonly></textarea>
     <div class="copyRow">
       <button id="copyBtn">نسخ كل الأجوبة</button>
@@ -215,98 +93,47 @@ textarea.freeText:focus{outline:2px solid var(--mustard);outline-offset:1px;}
     </div>
   </div>
 
-  <div class="footnote">هالنموذج بيوثق حساسيات الأكل حسب المعيار الألماني LMIV. الأجوبة يلي بتعبيها هون رح تستخدم مباشرة لتحديث بطاقة الحساسيات المطبوعة على المنيو.</div>
+  <div class="footnote">بعد هالنموذج، الجدول النهائي بيصير جاهز ١٠٠٪ للطباعة وللتقديم لوزارة الصحة الألمانية — بدون أي نقطة معلقة.</div>
 
 </div>
 
 <script>
 const DATA = [
-  {id:'global', tag:'عام', title:'أسئلة تطبق على كل المنيو', note:'هاي الأسئلة بترجع تأثيرها على أكتر من صنف بنفس الوقت.', items:[
-    {dish:'الحلومي المقلية (بكل الأطباق)', q:'هل مغطاة بطحين أو نشا قبل القلي؟', type:'yesno'},
-    {dish:'زيت القلي', q:'هل هو مشترك بين كل الأصناف المقلية (بطاطا، فلافل، حلومي، كبة، شنيتزل، موزاريلا)؟', type:'yesno'},
-    {dish:'زيت القلي المشترك', q:'إذا نعم فوق — هل من ضمنها أصناف فيها غلوتين (فلافل / شنيتزل / بقسماط)؟', type:'yesno'},
-    {dish:'صوص الثوم (تومية سورية)', q:'هل يحتوي بياض بيض كمستحلب؟', type:'yesno'},
-    {dish:'صوص الثوم (تومية سورية)', q:'هل يحتوي مايونيز أو أي منتج ألبان؟', type:'yesno'},
-    {dish:'الأرز', q:'شو فيه؟', type:'choice', options:['شعيرية (فيها غلوتين)','مطبوخ بزبدة أو سمنة','الاتنين سوا','ولا شي من هاي']},
-    {dish:'الخبز العربي (لكل الساندويشات)', q:'غير القمح، فيه إضافات تانية عالخبز نفسه (سمسم مثلاً)؟', type:'yesno'},
+  {id:'root', tag:'الأهم', title:'المقالي الأساسي — سؤال جذري واحد', note:'الجواب هون بيحسم تلقائياً ٦ أصناف: مقالي، مقالي حلومي، مقالي فلافل، مقالي مشكلة، شاورما مقالي، وجزء المقالي بجولي بومبة.', items:[
+    {dish:'طبق "مقالي" الأساسي (بدون إضافات)', q:'شو مكوناته الثابتة بالضبط؟ (مثلاً: فلافل + كبة، أو فلافل بس، أو غيره)', type:'text', key:true, why:'هاد فيه تناقض بجوابين سابقين (فلافل بس / فلافل وحلومي) — بدنا جواب واحد نهائي حاسم.'},
+    {dish:'"مقالي مشكلة" (الصنف التاني، مو نفس مقالي الأساسي)', q:'هل هي نفس مقالي الأساسي + فلافل + حلومي سوا، ولا تركيبة مختلفة تماماً؟', type:'text', key:true},
   ]},
 
-  {id:'breakfast', tag:'الفطور', title:'أصناف الفطور', items:[
-    {dish:'حمص / حمص باللحمة', q:'هل بينقدم مع خبز بنفس الطبق؟', type:'yesno'},
-    {dish:'حمص / حمص باللحمة', q:'هل مضاف سمنة أو زيت زيتون فوق؟', type:'yesno'},
-    {dish:'عجينة الفلافل (كل نسخها بالمنيو)', q:'هل فيها طحين كرابط؟', type:'yesno'},
-    {dish:'الفلافل', q:'هل مغمّسة أو مغطاة بسمسم قبل القلي؟', type:'yesno'},
-    {dish:'بيض مقلي', q:'هل يُقلى بزبدة أو سمنة؟', type:'yesno'},
-    {dish:'فتة بالسمنة', q:'هل فيها لبن أو زبادي؟', type:'yesno'},
-    {dish:'فتة بالسمنة', q:'هل فيها طحينة؟', type:'yesno'},
-    {dish:'فتة بالسمنة', q:'هل فيها بيض؟', type:'yesno'},
-    {dish:'فول بالزيت', q:'هل مضاف طحينة؟', type:'yesno'},
-    {dish:'فول بالزيت', q:'هل التتبيلة فيها كرفس؟', type:'yesno'},
-    {dish:'فول بالزيت', q:'هل بينقدم مع خبز؟', type:'yesno'},
+  {id:'joulybombe2', tag:'جولي بومبة', title:'جولي بومبة — نسخة الصحن', items:[
+    {dish:'جولي بومبة (نسخة الصحن، مو الساندويش)', q:'هل بترافقها خبز جنب الطبق؟', type:'yesno'},
+    {dish:'جولي بومبة (نسخة الصحن)', q:'هل بترافقها صوص ثوم (توم) متل نسخة الساندويش بالضبط؟', type:'yesno'},
   ]},
 
-  {id:'appetizers', tag:'مقبلات', title:'المقبلات الباردة والساخنة', items:[
-    {dish:'بابا غنوج', q:'هل الوصفة فيها طحينة؟', type:'yesno'},
-    {dish:'محمرة بالمكسرات', q:'هل فيها فتات خبز (بقسماط) كرابط؟', type:'yesno'},
-    {dish:'محمرة بالمكسرات', q:'هل مضاف طحينة؟', type:'yesno'},
-    {dish:'يالانجي', q:'هل التتبيلة فيها كرفس؟', type:'yesno'},
-    {dish:'مقبلات جولي (الطبق المشكل)', q:'عددلي كل الأصناف الداخلة فيه بالضبط', type:'text'},
-    {dish:'كبة مقلية / كبة صاجية', q:'هل الحشوة فيها صنوبر أو أي مكسرات؟', type:'yesno'},
-    {dish:'بوريك جبنة', q:'هل العجينة مدهونة ببيض قبل القلي أو الفرن؟', type:'yesno'},
-    {dish:'مسخن رول', q:'هل فيها صنوبر؟', type:'yesno'},
-    {dish:'مسخن رول', q:'هل العجين أو الحشوة فيها سمسم إضافي (غير سمسم الخبز العادي)؟', type:'yesno'},
+  {id:'marinade', tag:'تتبيلات', title:'تتبيلة اللحمة والدجاج', note:'ما انسأل عنها أبداً بالجولة الأولى — بعض تتبيلات الشاورما والمشاوي بتحتوي لبن أو زبادي.', items:[
+    {dish:'شاورما (دجاج/لحمة)', q:'هل تتبيلتها فيها لبن أو زبادي؟', type:'yesno'},
+    {dish:'شيش طاووق / كباب / لحمة مشوية (المشاوي)', q:'هل تتبيلتها فيها لبن أو زبادي؟', type:'yesno'},
+    {dish:'كبدة الدجاج', q:'هل بتتحمر بزبدة أو سمنة؟', type:'yesno'},
   ]},
 
-  {id:'grill', tag:'مشاوي', title:'المشاوي والأطباق اليومية', note:'كل هالأطباق بتنقدم أصلاً مع حمص وصوص ثوم وسلطة وخضار مشوي حسب المنيو.', items:[
-    {dish:'كباب / شيش طاووق / لحمة مشوية / مكس جريل', q:'هل بيترافقها خبز بشكل افتراضي جوا الطبق؟', type:'yesno'},
+  {id:'missed', tag:'اتنسيو', title:'أصناف اتنسيت من الجدول بالغلط', items:[
+    {dish:'حمص باللحمة (قسم المقبلات، مو الفطور)', q:'هل بينقدم مع خبز جنبه بشكل افتراضي؟', type:'yesno'},
+    {dish:'حمص شاورما (قسم المقبلات)', q:'هل بينقدم مع خبز جنبه بشكل افتراضي؟', type:'yesno'},
+    {dish:'حمص / متبل (قسم المقبلات العادي)', q:'هل بينقدموا مع خبز جنبهن بشكل افتراضي؟', type:'yesno'},
   ]},
 
-  {id:'shawarma', tag:'شاورما', title:'الشاورما، الفاهيتا، الفيلادلفيا، الشنيتزل', items:[
-    {dish:'شنيتزل', q:'هل مغلف بالبيض ثم البقسماط (طريقة تغليف قياسية)؟', type:'yesno'},
-    {dish:'شنيتزل', q:'هل البقسماط فيه مسحوق حليب؟', type:'yesno'},
-    {dish:'كبدة دجاج', q:'هل مغلفة بطحين قبل القلي؟', type:'yesno'},
-    {dish:'مرقاز (Merguez)', q:'عندك ملصق مكونات من المورّد؟', type:'yesno'},
-    {dish:'مرقاز — إذا ما فيه ملصق', q:'حسب علمك فيها مواد رابطة (نشا/دقيق) أو مسحوق حليب؟', type:'yesno'},
-    {dish:'سجق عربي (Sucuk)', q:'عندك ملصق مكونات من المورّد؟', type:'yesno'},
-    {dish:'سجق عربي — إذا ما فيه ملصق', q:'حسب علمك فيها مواد رابطة (نشا/دقيق) أو مسحوق حليب؟', type:'yesno'},
-    {dish:'فاهيتا / فيلادلفيا', q:'هل الصوص المستخدم فيهم فيه مايونيز؟', type:'yesno'},
+  {id:'kids', tag:'أطفال وبرجر', title:'برجر الدجاج ومنيو الأطفال', items:[
+    {dish:'برجر الدجاج', q:'هل قطعة الدجاج مغلفة (بريدد) بطحين أو بقسماط؟', type:'yesno'},
+    {dish:'نقاتس الأطفال', q:'هل مغلفة بالبيض قبل البقسماط؟', type:'yesno'},
+    {dish:'أصابع جبنة الأطفال', q:'هل مغلفة بالبيض قبل البقسماط؟', type:'yesno'},
   ]},
 
-  {id:'joulybombe', tag:'جولي بومبة', title:'جولي بومبة (شاورما + مقالي + بطاطا + حلومي مقلية)', items:[
-    {dish:'جولي بومبة — قسم "المقالي" جوا الطبق', q:'شو بالضبط داخل فيه؟', type:'choice', options:['فلافل بس','فيها كبة','فيها شنيتزل','مزيج أكتر من هاد']},
-    {dish:'جولي بومبة — قسم "المقالي" جوا الطبق', q:'إذا "مزيج أكتر من هاد" فوق، اكتب التفاصيل', type:'text'},
-    {dish:'جولي بومبة (نسخة الساندويش)', q:'فيها صوص إضافي غير صوص الثوم العام؟', type:'yesno'},
-    {dish:'جولي بومبة — الصوص الإضافي', q:'إذا نعم فوق، شو نوعه؟', type:'text'},
-  ]},
-
-  {id:'salads', tag:'سلطات', title:'السلطات', items:[
-    {dish:'سلطة عربية', q:'هل مضاف صوص طحينة؟', type:'yesno'},
-    {dish:'سلطة الأفوكادو', q:'هل فيها جبنة؟', type:'yesno'},
-    {dish:'سلطة الأفوكادو', q:'هل فيها مكسرات (لوز، جوز، إلخ)؟', type:'yesno'},
-    {dish:'سلطة التونة', q:'هل فيها مايونيز؟', type:'yesno'},
-  ]},
-
-  {id:'burger', tag:'برجر', title:'البرجر ومنيو الأطفال', items:[
-    {dish:'صوص البرجر (كل الأنواع)', q:'هل فيه مايونيز أو بيض؟', type:'yesno'},
-    {dish:'خبز البرجر (البَنز)', q:'فيه مكونات إضافية غير القمح (حليب مثلاً)؟', type:'yesno'},
-    {dish:'منيو الأطفال', q:'عددلي الأصناف الداخلة فيه بالضبط', type:'text'},
-  ]},
-
-  {id:'sides', tag:'جانبية', title:'الأطباق الجانبية', items:[
-    {dish:'شوربة عدس', q:'هل فيها كرفس بالتتبيلة؟', type:'yesno'},
-    {dish:'شوربة عدس', q:'هل مثخّنة بطحين؟', type:'yesno'},
-    {dish:'أصابع موزاريلا', q:'هل التغليف فيه بيض؟', type:'yesno'},
-  ]},
-
-  {id:'dessert', tag:'حلويات', title:'الحلويات', items:[
-    {dish:'حلاوة طحينية', q:'هل فيها فستق أو لوز بالتزيين؟', type:'yesno'},
-    {dish:'بوظة عربية', q:'هل فيها فستق أو مستكة أو أي مكسرات بالتوبنغ؟', type:'yesno'},
+  {id:'extra', tag:'دقة إضافية', title:'سؤال أخير للدقة القصوى', items:[
+    {dish:'صوص الشطة', q:'هل فيه أي مثخّن فيه غلوتين (نشا قمح)؟', type:'yesno'},
   ]},
 ];
 
 const answers = {};
 let totalQ = 0;
-
 function makeQId(secId, idx){ return secId + '_' + idx; }
 
 function render(){
@@ -315,24 +142,21 @@ function render(){
   DATA.forEach(sec=>{
     const block = document.createElement('section');
     block.className = 'block';
-
     const head = document.createElement('div');
     head.className = 'block-head';
     head.innerHTML = `<span class="tag">${sec.tag}</span><h2>${sec.title}</h2>`;
     block.appendChild(head);
-
     if(sec.note){
       const n = document.createElement('p');
       n.className = 'block-note';
       n.textContent = sec.note;
       block.appendChild(n);
     }
-
     sec.items.forEach((item, idx)=>{
       totalQ++;
       const qid = makeQId(sec.id, idx);
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card' + (item.key ? ' key' : '');
       card.id = 'card_'+qid;
 
       const dishEl = document.createElement('div');
@@ -345,27 +169,17 @@ function render(){
       qEl.textContent = item.q;
       card.appendChild(qEl);
 
+      if(item.why){
+        const whyEl = document.createElement('div');
+        whyEl.className = 'why';
+        whyEl.textContent = item.why;
+        card.appendChild(whyEl);
+      }
+
       if(item.type === 'yesno'){
         const seg = document.createElement('div');
         seg.className = 'seg';
         ['نعم','لا','مو متأكد'].forEach(v=>{
-          const btn = document.createElement('button');
-          btn.textContent = v;
-          btn.dataset.v = v;
-          btn.addEventListener('click', ()=>{
-            seg.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-            btn.classList.add('active');
-            answers[qid] = {dish:item.dish, q:item.q, a:v};
-            card.classList.add('answered');
-            updateProgress();
-          });
-          seg.appendChild(btn);
-        });
-        card.appendChild(seg);
-      } else if(item.type === 'choice'){
-        const seg = document.createElement('div');
-        seg.className = 'seg';
-        item.options.forEach(v=>{
           const btn = document.createElement('button');
           btn.textContent = v;
           btn.dataset.v = v;
@@ -395,13 +209,10 @@ function render(){
         });
         card.appendChild(ta);
       }
-
       block.appendChild(card);
     });
-
     root.appendChild(block);
   });
-
   updateProgress();
 }
 
@@ -424,58 +235,29 @@ function updateProgress(){
 }
 
 function buildSummary(){
-  const rest = document.getElementById('mRest').value.trim() || '—';
-  const chef = document.getElementById('mChef').value.trim() || '—';
-  const date = document.getElementById('mDate').value || '—';
-
-  let out = `نموذج تأكيد الحساسيات الغذائية\n`;
-  out += `المطعم: ${rest}\n`;
-  out += `المسؤول: ${chef}\n`;
-  out += `التاريخ: ${date}\n`;
+  let out = `الجولة الثانية والأخيرة — تأكيد الحساسيات\nمطعم Naya Jouly\n`;
   out += `\n${'='.repeat(36)}\n`;
-
   DATA.forEach(sec=>{
-    const rows = sec.items
-      .map((item, idx)=>answers[makeQId(sec.id, idx)])
-      .filter(Boolean);
+    const rows = sec.items.map((item, idx)=>answers[makeQId(sec.id, idx)]).filter(Boolean);
     if(rows.length === 0) return;
     out += `\n[ ${sec.title} ]\n`;
-    rows.forEach(r=>{
-      out += `- ${r.dish} — ${r.q}\n  الجواب: ${r.a}\n`;
-    });
+    rows.forEach(r=>{ out += `- ${r.dish} — ${r.q}\n  الجواب: ${r.a}\n`; });
   });
-
   document.getElementById('summaryOut').value = out.trim();
 }
-
-document.getElementById('mRest').addEventListener('input', buildSummary);
-document.getElementById('mChef').addEventListener('input', buildSummary);
-document.getElementById('mDate').addEventListener('input', buildSummary);
 
 document.getElementById('copyBtn').addEventListener('click', ()=>{
   const text = document.getElementById('summaryOut').value;
   const msg = document.getElementById('copyMsg');
-  const showMsg = ()=>{
-    msg.classList.add('show');
-    setTimeout(()=>msg.classList.remove('show'), 2200);
-  };
+  const showMsg = ()=>{ msg.classList.add('show'); setTimeout(()=>msg.classList.remove('show'), 2200); };
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(text).then(showMsg).catch(()=>{
-      const ta = document.getElementById('summaryOut');
-      ta.select();
-      document.execCommand('copy');
-      showMsg();
+      const ta = document.getElementById('summaryOut'); ta.select(); document.execCommand('copy'); showMsg();
     });
   } else {
-    const ta = document.getElementById('summaryOut');
-    ta.select();
-    document.execCommand('copy');
-    showMsg();
+    const ta = document.getElementById('summaryOut'); ta.select(); document.execCommand('copy'); showMsg();
   }
 });
-
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('mDate').value = today;
 
 render();
 </script>
