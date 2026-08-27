@@ -182,7 +182,7 @@ textarea.freeText:focus{outline:2px solid var(--mustard);outline-offset:1px;}
       <h1>نموذج تأكيد الحساسيات الغذائية</h1>
       <p>عبّي الأجوبة تحت كل صنف. الأسئلة كلها نعم / لا / مو متأكد، وبنص الآخر بوكس فيه كل الأجوبة جاهز للنسخ والإرسال.</p>
     </div>
-    <div class="stamp" id="stamp"><span class="n" id="stampPct">0%</span>قيد التعبئة</div>
+    <div class="stamp" id="stamp"><span class="n" id="stampPct">0%</span><span id="stampLabel">قيد التعبئة</span></div>
   </div>
 
   <div class="meta">
@@ -411,14 +411,14 @@ function updateProgress(){
   document.getElementById('progFill').style.width = pct + '%';
   document.getElementById('progLabel').textContent = `${answeredCount} من ${totalQ} سؤال تمت الإجابة عليه`;
   const stamp = document.getElementById('stamp');
-  document.getElementById('stampPct').textContent = pct + '%';
   if(pct === 100){
     stamp.classList.add('done');
-    stamp.lastChild.textContent = '';
-    stamp.innerHTML = `<span class="n">✔</span>مكتمل`;
+    document.getElementById('stampPct').textContent = '✔';
+    document.getElementById('stampLabel').textContent = 'مكتمل';
   } else {
     stamp.classList.remove('done');
-    stamp.innerHTML = `<span class="n">${pct}%</span>قيد التعبئة`;
+    document.getElementById('stampPct').textContent = pct + '%';
+    document.getElementById('stampLabel').textContent = 'قيد التعبئة';
   }
   buildSummary();
 }
